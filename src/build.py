@@ -1,6 +1,6 @@
 import markdown, os, pathlib
 ROOT=pathlib.Path(__file__).resolve().parent.parent
-PREVIEW_NOTE=True
+PREVIEW_NOTE = False
 CO='DGFIX LTD'; NUM='10646551'; ADDR='13 Chestnut Road, Dartford DA1 2LB'
 EMAIL='Holusa.d@seznam.cz'
 NAV=[('Home','index.html',''),('Games','games/index.html','games'),('Contact','contact/index.html','contact'),('Privacy','privacy/index.html','privacy')]
