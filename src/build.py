@@ -110,12 +110,15 @@ page('privacy/index.html','Privacy — Whizzed','Privacy information for Whizzed
 <div class="policy">
 <h1>Privacy</h1>
 <p>Last updated: 11 November 2026</p>
-<p>This page explains how Whizzed handles personal information on this website and points to the privacy policy for each of our games.</p>
+<p>This page explains how Whizzed handles personal information on this website and points to the privacy policy for each of our apps.</p>
 <h2>Who we are</h2>
 <p>Whizzed is a trading name of <strong>{CO}</strong>, company number {NUM}, registered office 13 Chestnut Road, Dartford, Kent, DA1 2LB, United Kingdom. {CO} is the data controller. Contact: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
-<h2>Game privacy policies</h2>
-<ul><li><a href="{{r}}privacy/meridian/index.html">Meridian privacy policy</a> (Android)</li></ul>
-<p>Each game has its own policy because each one uses different services.</p>
+<h2>App privacy policies</h2>
+<ul>
+<li><a href="{{r}}privacy/meridian/index.html">Meridian privacy policy</a> (Android)</li>
+<li><a href="{{r}}privacy/printcost/index.html">Whizzed Print Cost privacy policy</a> (Android)</li>
+</ul>
+<p>Each app has its own policy because each one uses different services.</p>
 <h2>This website</h2>
 <p>This website is a set of static pages. It has no accounts, no contact forms, no advertising and no analytics, and it does not set cookies.</p>
 <p>Like any website, the hosting provider that serves these pages processes technical information such as your IP address, browser type and the pages requested, so that the site can be delivered and protected against abuse. We do not use that information to identify you.</p>
@@ -128,12 +131,14 @@ page('privacy/index.html','Privacy — Whizzed','Privacy information for Whizzed
 </div>
 ''','privacy')
 
-md=(ROOT/'src/meridian-privacy.md').read_text()
-html=markdown.markdown(md,extensions=['extra','sane_lists'])
-html=html.replace('holusa.d@seznam.cz',f'<a href="mailto:{EMAIL}">{EMAIL}</a>').replace('<strong><a','<a').replace('</a></strong>','</a>')
-page('privacy/meridian/index.html','Meridian privacy policy — Whizzed','Privacy policy for the Meridian app by Whizzed (DGFIX LTD).',f'''<div class="policy">
-<h1>Privacy policy for Meridian</h1>
-{html}
-</div>''','privacy')
+def policy(src, dest, title, desc, heading):
+    md=(ROOT/'src'/src).read_text()
+    html=markdown.markdown(md,extensions=['extra','sane_lists'])
+    html=html.replace('holusa.d@seznam.cz','<a href="mailto:%s">%s</a>' % (EMAIL, EMAIL)).replace('<strong><a','<a').replace('</a></strong>','</a>')
+    body='<div class="policy">\n<h1>%s</h1>\n%s\n</div>' % (heading, html)
+    page(dest,title,desc,body,'privacy')
+
+policy('meridian-privacy.md','privacy/meridian/index.html','Meridian privacy policy — Whizzed','Privacy policy for the Meridian app by Whizzed (DGFIX LTD).','Privacy policy for Meridian')
+policy('printcost-privacy.md','privacy/printcost/index.html','Whizzed Print Cost privacy policy — Whizzed','Privacy policy for the Whizzed Print Cost app by Whizzed (DGFIX LTD).','Privacy policy for Whizzed Print Cost')
 (ROOT/'.nojekyll').write_text('')
 print('built')
