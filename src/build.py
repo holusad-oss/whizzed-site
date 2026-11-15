@@ -117,6 +117,7 @@ page('privacy/index.html','Privacy — Whizzed','Privacy information for Whizzed
 <ul>
 <li><a href="{{r}}privacy/meridian/index.html">Meridian privacy policy</a> (Android)</li>
 <li><a href="{{r}}privacy/printcost/index.html">Whizzed Print Cost privacy policy</a> (Android)</li>
+<li><a href="{{r}}privacy/flashsums/index.html">Flashsums privacy policy</a> (Android)</li>
 </ul>
 <p>Each app has its own policy because each one uses different services.</p>
 <h2>This website</h2>
@@ -139,6 +140,7 @@ def policy(src, dest, title, desc, heading):
     page(dest,title,desc,body,'privacy')
 
 policy('meridian-privacy.md','privacy/meridian/index.html','Meridian privacy policy — Whizzed','Privacy policy for the Meridian app by Whizzed (DGFIX LTD).','Privacy policy for Meridian')
+policy('flashsums-privacy.md','privacy/flashsums/index.html','Flashsums privacy policy — Whizzed','Privacy policy for the Flashsums app by Whizzed (DGFIX LTD).','Privacy policy for Flashsums')
 policy('printcost-privacy.md','privacy/printcost/index.html','Whizzed Print Cost privacy policy — Whizzed','Privacy policy for the Whizzed Print Cost app by Whizzed (DGFIX LTD).','Privacy policy for Whizzed Print Cost')
 (ROOT/'.nojekyll').write_text('')
 print('built')
