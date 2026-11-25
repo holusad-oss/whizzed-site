@@ -5,6 +5,7 @@ ROOT=pathlib.Path(__file__).resolve().parent.parent
 PREVIEW_NOTE = False
 CO='DGFIX LTD'; NUM='10646551'; ADDR='13 Chestnut Road, Dartford DA1 2LB'
 EMAIL='Holusa.d@seznam.cz'
+PRIVACY_EMAIL='sulikovazena@gmail.com'
 SITE='https://whizzed.uk'
 NAV=[('Home','index.html',''),('Games','games/index.html','games'),('Contact','contact/index.html','contact'),('Privacy','privacy/index.html','privacy')]
 PLAY={
@@ -212,7 +213,6 @@ page('games/flashsums/index.html','Flashsums — Whizzed','Flashsums is 11+ math
 <p>Flashsums is a fast neon maths and brain trainer for quick, timed practice of the skills used in the UK 11+ (eleven plus) and in KS2 maths. Race the clock on mental maths, from Easy to Expert, then switch to brain modes that practise verbal reasoning and non-verbal reasoning — word, letter, shape and sequence puzzles.</p>
 <p>You can play in portrait or landscape. There are global Play Games leaderboards, and a local Top 10 on your device. No account is needed to play. Sign in to Play Games only if you want the global boards.</p>
 <p>Flashsums is skill practice in a game. It is not an official 11+ exam, it does not include full mock papers, and it is not linked to any exam board.</p>
-<p>Contains ads on the menu and after a finished round — never during a timed round. A one-time purchase (£0.99) removes them. You can restore the purchase from Settings.</p>
 <div class="shots">
 <img src="{{r}}assets/img/flashsums-shot-play.webp" width="360" height="640" alt="Flashsums timed sums with a streak">
 <img src="{{r}}assets/img/flashsums-shot-hard.webp" width="360" height="640" alt="Flashsums hard mode with the clock">
@@ -263,10 +263,10 @@ page('contact/index.html','Contact — Whizzed','Contact Whizzed (DGFIX LTD).',f
 page('privacy/index.html','Privacy — Whizzed','Privacy information for Whizzed and its games.',f'''
 <div class="policy">
 <h1>Privacy</h1>
-<p>Last updated: 24 November 2026</p>
+<p>Last updated: 25 November 2026</p>
 <p>This page explains how Whizzed handles personal information on this website and points to the privacy policy for each of our apps.</p>
 <h2>Who we are</h2>
-<p>Whizzed is a trading name of <strong>{CO}</strong>, company number {NUM}, registered office 13 Chestnut Road, Dartford, Kent, DA1 2LB, United Kingdom. {CO} is the data controller. Contact: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<p>Whizzed is a trading name of <strong>{CO}</strong>, company number {NUM}, registered office 13 Chestnut Road, Dartford, Kent, DA1 2LB, United Kingdom. {CO} is the data controller. Contact: <a href="mailto:{PRIVACY_EMAIL}">{PRIVACY_EMAIL}</a>.</p>
 <h2>App privacy policies</h2>
 <ul>
 <li><a href="{{r}}privacy/stellar-run/index.html">Stellar Run privacy policy</a> (Android)</li>
@@ -281,7 +281,7 @@ page('privacy/index.html','Privacy — Whizzed','Privacy information for Whizzed
 <h2>If you email us</h2>
 <p>If you email us, we use your email address and message only to reply and deal with any follow-up, and we delete the email when we no longer need it.</p>
 <h2>Your rights</h2>
-<p>If UK or EU data protection law applies to you, you may have the right to ask for a copy of your personal information, to ask for it to be corrected or deleted, to object to or restrict certain uses, and to complain to a regulator. In the United Kingdom that is the Information Commissioner’s Office (ICO): <a href="https://ico.org.uk">https://ico.org.uk</a>. To make a request, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<p>If UK or EU data protection law applies to you, you may have the right to ask for a copy of your personal information, to ask for it to be corrected or deleted, to object to or restrict certain uses, and to complain to a regulator. In the United Kingdom that is the Information Commissioner’s Office (ICO): <a href="https://ico.org.uk">https://ico.org.uk</a>. To make a request, email <a href="mailto:{PRIVACY_EMAIL}">{PRIVACY_EMAIL}</a>.</p>
 <h2>Changes</h2>
 <p>If we change this page in a meaningful way, we will update the “Last updated” date.</p>
 </div>
@@ -290,7 +290,9 @@ page('privacy/index.html','Privacy — Whizzed','Privacy information for Whizzed
 def policy(src, dest, title, desc, heading):
     md=(ROOT/'src'/src).read_text()
     html=markdown.markdown(md,extensions=['extra','sane_lists'])
-    html=html.replace('holusa.d@seznam.cz','<a href="mailto:%s">%s</a>' % (EMAIL, EMAIL)).replace('<strong><a','<a').replace('</a></strong>','</a>')
+    for addr in ('holusa.d@seznam.cz', 'Holusa.d@seznam.cz', PRIVACY_EMAIL):
+        html=html.replace(addr, '<a href="mailto:%s">%s</a>' % (PRIVACY_EMAIL, PRIVACY_EMAIL))
+    html=html.replace('<strong><a','<a').replace('</a></strong>','</a>')
     body='<div class="policy">\n<h1>%s</h1>\n%s\n</div>' % (heading, html)
     page(dest,title,desc,body,'privacy')
 

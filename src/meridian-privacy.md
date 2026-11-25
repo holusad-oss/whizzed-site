@@ -1,4 +1,4 @@
-Last updated: 11 November 2026
+Last updated: 25 November 2026
 
 Meridian is a geography quiz app for Android (“Meridian”, “the app”), published by Whizzed. Whizzed is a trading name of DGFIX LTD. This policy explains what information is used when you use Meridian, including when the app is used by a child.
 
@@ -9,7 +9,7 @@ The organisation responsible for this app and for this policy (the data controll
 **DGFIX LTD** (trading as Whizzed)  
 Company number: 10646551 (registered in England and Wales)  
 Registered office: 13 Chestnut Road, Dartford, Kent, DA1 2LB, United Kingdom  
-Email: **holusa.d@seznam.cz**
+Email: **sulikovazena@gmail.com**
 
 If you have a question, want a copy of the information we hold, or want us to delete what we can, please email that address.
 
@@ -77,7 +77,7 @@ Meridian is designed so that children, including children under 13, can use it.
 
 We do not knowingly use a child’s information to build an advertising profile, to send marketing, or to allow a child to pay without a parent step. We do not ask a child for a name, email address or photos.
 
-If you are a parent or guardian and you think we have information we should not have, email holusa.d@seznam.cz and we will look into it and delete what we can.
+If you are a parent or guardian and you think we have information we should not have, email sulikovazena@gmail.com and we will look into it and delete what we can.
 
 Parents can also:
 
@@ -109,7 +109,7 @@ If UK or EU data protection law applies to you, you may have the right to ask fo
 For the United Kingdom, that regulator is the Information Commissioner’s Office (ICO): <https://ico.org.uk>  
 For the EU, you can contact your local data protection authority.
 
-To make a request about Meridian, email holusa.d@seznam.cz. Because most game information lives only on the device, the most effective way to delete a save is often to clear the app’s data or uninstall it. We will still help if you write to us.
+To make a request about Meridian, email sulikovazena@gmail.com. Because most game information lives only on the device, the most effective way to delete a save is often to clear the app’s data or uninstall it. We will still help if you write to us.
 
 ## Security
 
@@ -127,4 +127,4 @@ If we change this policy in a meaningful way, we will update the “Last updated
 
 DGFIX LTD (trading as Whizzed)  
 13 Chestnut Road, Dartford, Kent, DA1 2LB, United Kingdom  
-Email: holusa.d@seznam.cz
+Email: sulikovazena@gmail.com
