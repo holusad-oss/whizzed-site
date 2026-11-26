@@ -36,3 +36,8 @@ footer.site{border-top:1px solid var(--line);background:var(--soft);color:var(--
 footer.site .wrap{padding-top:22px;padding-bottom:28px}
 footer.site p{margin:4px 0}
 @media (max-width:560px){h1{font-size:1.6rem}nav a{margin-left:12px}.game{flex-direction:column}}
+.play-badge{display:inline-block;margin:8px 0;line-height:0}
+.play-badge img{height:80px;width:auto;max-width:260px;display:block}
+.play-legal{font-size:.8rem;color:var(--muted)}
+.more-games{margin-top:28px}
+.more-games ul{padding-left:1.2em}

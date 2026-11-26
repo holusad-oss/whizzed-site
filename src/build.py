@@ -4,6 +4,15 @@ PREVIEW_NOTE = False
 CO='DGFIX LTD'; NUM='10646551'; ADDR='13 Chestnut Road, Dartford DA1 2LB'
 EMAIL='Holusa.d@seznam.cz'
 NAV=[('Home','index.html',''),('Games','games/index.html','games'),('Contact','contact/index.html','contact'),('Privacy','privacy/index.html','privacy')]
+
+def play_badge(pkg, r='{r}'):
+    url=f'https://play.google.com/store/apps/details?id={pkg}'
+    return (
+        f'<a class="play-badge" href="{url}">'
+        f'<img src="{r}assets/img/google-play-badge.png" alt="Get it on Google Play" width="646" height="250">'
+        f'</a>'
+    )
+
 def page(path,title,desc,body,active):
     depth=path.count('/')
     r='../'*depth
@@ -93,6 +102,38 @@ page('games/index.html','Games — Whizzed','Games by Whizzed: Meridian and Stel
 </section>
 ''','games')
 
+page('games/flashsums/index.html','Flashsums — Whizzed','Flashsums is 11+ maths and reasoning practice for Android: timed sums, verbal and non-verbal skills. Get it on Google Play.',f'''
+<div class="game">
+<img class="icon" src="{{r}}assets/img/flashsums-icon.webp" width="72" height="72" alt="Flashsums app icon">
+<div>
+<h1 style="margin:0">Flashsums</h1>
+<p class="lead" style="margin:8px 0 0">11+ maths and reasoning practice: timed sums, verbal and non-verbal skills.</p>
+{play_badge('com.whizzed.flashsums')}
+</div>
+</div>
+<img class="feature" src="{{r}}assets/img/flashsums-feature.webp" width="1024" height="500" alt="Flashsums feature graphic">
+<p>Flashsums is a fast neon maths and brain trainer for quick, timed practice of the skills used in the UK 11+ (eleven plus) and in KS2 maths. Race the clock on mental maths, from Easy to Expert, then switch to brain modes that practise verbal reasoning and non-verbal reasoning — word, letter, shape and sequence puzzles.</p>
+<p>You can play in portrait or landscape. There are global Play Games leaderboards, and a local Top 10 on your device. No account is needed to play. Sign in to Play Games only if you want the global boards.</p>
+<p>Flashsums is skill practice in a game. It is not an official 11+ exam, it does not include full mock papers, and it is not linked to any exam board.</p>
+<p>Contains ads on the menu and after a finished round — never during a timed round. A one-time purchase (£0.99) removes them. You can restore the purchase from Settings.</p>
+<div class="shots">
+<img src="{{r}}assets/img/flashsums-shot-play.webp" width="360" height="640" alt="Flashsums timed sums with a streak">
+<img src="{{r}}assets/img/flashsums-shot-hard.webp" width="360" height="640" alt="Flashsums hard mode with the clock">
+<img src="{{r}}assets/img/flashsums-shot-results.webp" width="360" height="640" alt="Flashsums results after a round">
+<img src="{{r}}assets/img/flashsums-shot-leaderboard.webp" width="360" height="640" alt="Flashsums leaderboard">
+</div>
+<p style="margin-top:16px"><a href="{{r}}privacy/flashsums/index.html">Flashsums privacy policy</a></p>
+<div class="more-games card soft">
+<p style="margin:0 0 8px"><strong>More from Whizzed</strong></p>
+<ul>
+<li><a href="{{r}}games/index.html#stellar-run">Stellar Run</a></li>
+<li><a href="{{r}}games/flashsums/index.html">Flashsums</a></li>
+<li><a href="{{r}}games/index.html#meridian">Meridian</a></li>
+</ul>
+</div>
+<p class="play-legal">Google Play and the Google Play logo are trademarks of Google LLC.</p>
+''','games')
+
 page('contact/index.html','Contact — Whizzed','Contact Whizzed (DGFIX LTD).',f'''
 <h1>Contact</h1>
 <p class="lead">Questions about our games, support or privacy? Email us and we will reply as soon as we can.</p>
@@ -135,10 +176,13 @@ page('privacy/index.html','Privacy — Whizzed','Privacy information for Whizzed
 def policy(src, dest, title, desc, heading):
     md=(ROOT/'src'/src).read_text()
     html=markdown.markdown(md,extensions=['extra','sane_lists'])
-    html=html.replace('holusa.d@seznam.cz','<a href="mailto:%s">%s</a>' % (EMAIL, EMAIL)).replace('<strong><a','<a').replace('</a></strong>','</a>')
+    html=html.replace('holusa.d@seznam.cz','<a href="mailto:%s">%s</a>' % (EMAIL, EMAIL))
+    html=html.replace('sulikovazena@gmail.com','<a href="mailto:sulikovazena@gmail.com">sulikovazena@gmail.com</a>')
+    html=html.replace('<strong><a','<a').replace('</a></strong>','</a>')
     body='<div class="policy">\n<h1>%s</h1>\n%s\n</div>' % (heading, html)
     page(dest,title,desc,body,'privacy')
 
+policy('stellar-run-privacy.md','privacy/stellar-run/index.html','Stellar Run privacy policy — Whizzed','Privacy policy for the Stellar Run app by Whizzed (DGFIX LTD).','Privacy policy for Stellar Run')
 policy('meridian-privacy.md','privacy/meridian/index.html','Meridian privacy policy — Whizzed','Privacy policy for the Meridian app by Whizzed (DGFIX LTD).','Privacy policy for Meridian')
 policy('flashsums-privacy.md','privacy/flashsums/index.html','Flashsums privacy policy — Whizzed','Privacy policy for the Flashsums app by Whizzed (DGFIX LTD).','Privacy policy for Flashsums')
 policy('printcost-privacy.md','privacy/printcost/index.html','Whizzed Print Cost privacy policy — Whizzed','Privacy policy for the Whizzed Print Cost app by Whizzed (DGFIX LTD).','Privacy policy for Whizzed Print Cost')
