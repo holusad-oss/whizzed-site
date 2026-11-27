@@ -1,4 +1,4 @@
-Last updated: 11 November 2026
+Last updated: 25 November 2026
 
 Whizzed Print Cost is an offline 3D-print cost calculator for Android (“Whizzed Print Cost”, “Print Cost”, “the app”), published by Whizzed. Whizzed is a trading name of DGFIX LTD. The app’s package name is uk.whizzed.printcost. This policy explains what information is used when you use Whizzed Print Cost.
 
@@ -9,7 +9,7 @@ The organisation responsible for this app and for this policy (the data controll
 **DGFIX LTD** (trading as Whizzed)  
 Company number: 10646551 (registered in England and Wales)  
 Registered office: 13 Chestnut Road, Dartford, Kent, DA1 2LB, United Kingdom  
-Email: **holusa.d@seznam.cz**
+Email: **sulikovazena@gmail.com**
 
 If you have a question, want a copy of the information we hold, or want us to delete what we can, please email that address.
 
@@ -73,7 +73,7 @@ If UK or EU data protection law applies to you, you may have the right to ask fo
 For the United Kingdom, that regulator is the Information Commissioner’s Office (ICO): <https://ico.org.uk>  
 For the EU, you can contact your local data protection authority.
 
-To make a request about Whizzed Print Cost, email holusa.d@seznam.cz. Because we do not collect data ourselves, and any calculator information lives only on the device, the most effective way to delete it is often to clear the app’s data or uninstall it. We will still help if you write to us.
+To make a request about Whizzed Print Cost, email sulikovazena@gmail.com. Because we do not collect data ourselves, and any calculator information lives only on the device, the most effective way to delete it is often to clear the app’s data or uninstall it. We will still help if you write to us.
 
 ## Security
 
@@ -91,4 +91,4 @@ If we change this policy in a meaningful way, we will update the “Last updated
 
 DGFIX LTD (trading as Whizzed)  
 13 Chestnut Road, Dartford, Kent, DA1 2LB, United Kingdom  
-Email: holusa.d@seznam.cz
+Email: sulikovazena@gmail.com
